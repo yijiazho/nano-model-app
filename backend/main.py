@@ -19,7 +19,8 @@ async def websocket_endpoint(websocket: WebSocket):
     try:
         while True:
             data = await websocket.receive_text()
-
+            print(data)
+            
             try:
                 data_dict = json.loads(data)
                 user_message = data_dict.get("message", "")
